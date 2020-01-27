@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form to submit oracle queries</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<div class="container">
+    <h2>Welcome to Oracle query editor</h2>
+
+    <#if oracleData?? >
+    Your submitted data<br>
+    Query entered id: ${oracleData.input}
+    <#else>
+
+    <form action="/welcome" method="post">
+        <div class="form-group">
+            <label>Query:</label>
+            <input type="text" class="form-control" name="input" placeholder="Enter sql">
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    </#if>
+</div>
+
+</body>
+</html>
